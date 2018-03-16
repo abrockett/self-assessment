@@ -12,7 +12,8 @@
         display: table-row;
     }
     .divTableCellText {
-        /* border: 1px solid #999999; */
+        border-bottom: 1px solid #999999;
+        border-right: 1px solid #999999;
         display: table-cell;
         padding: 3px 10px;
         width: 70%;
@@ -26,6 +27,10 @@
         display: table-cell;
         padding: 3px 10px;
         width: 30%;
+    }
+    .nowrap  { 
+        -webkit-flex-wrap: nowrap;
+        flex-wrap: nowrap;
     }
 
     *, *::before, *::after {
@@ -50,9 +55,6 @@
         max-width: 540px;
         /* box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.16), 0 2px 5px 0 rgba(0, 0, 0, 0.26); */
         /* border-radius: 3px; */
-    }
-    h1 {
-        color: #fff;
     }
     group + group {
         margin-top: 20px;
@@ -100,62 +102,85 @@
 <body>
     <div class="divTable" style="width: 100%;">
         <div class="divTableRow">
-            <div class="divTableCellText">
+            <div class="divTableCellText" style="font-size:24px;line-height:30px;border:none">
                 <b>PATIENT SELF-ASSESSMENT OF COMMUNICATION</b>
             </div>
         </div>
 
         <div class="divTableRow">
-            <div class="divTableCellText">
+                <div class="divTableCellText" style="padding-top:40px;border:none">
+                    <b>Name: ________________________________ Date: _________________</b>
+                </div>
+        </div>
+
+        <div class="divTableRow">
+            <div class="divTableCellText" style="border:none;vertical-align:top">
+                <p><b>Instructions:</b>&nbsp;
                 The purpose of this form is to identify problems your hearing loss
-                may be causing you.
+                may be causing you. If you wear hearing aids, answer the questions
+                according to how you communicate <i>when the hearing aids are in use.</i></p>
+                <p>One of the five ratings on the right should be assigned to each 
+                of the statements below.</p>
+                </p>
+            </div>
+            <div class="divTableCellRating">
+                <p>(1) Almost never (or never)</p>
+                <p>(2) Occasionally (about 1/4 of the time)</p>
+                <p>(3) About 1/2 the time</p>
+                <p>(4) Frequently (about 3/4 of the time)</p>
+                <p>(5) Practically always (or always)</p>
             </div>
         </div>
 
         <div class="divTableRow">
             <div class="divTableCellText">
                 <b>Do you experience communication difficulties in sitations when speaking
-                with one other person?</b>&nbsp;(at home, in a checkout line)
+                with one other person?</b>
+                &nbsp;(at home, at work, in a social situation, with a waitress,
+                a store clerk, with a spouse, boss, etc.)
             </div>
             <div class="divTableCellRating inline-radio-container">
                 <group class="inline-radio">
-                    <div><input type="radio" name="title"><label>1</label></div>
-                    <div><input type="radio" name="title"><label>2</label></div>
-                    <div><input type="radio" name="title" checked><label>3</label></div>
-                    <div><input type="radio" name="title"><label>4</label></div>
-                    <div><input type="radio" name="title"><label>5</label></div>
+                    <div><input type="radio" name="question1"><label>1</label></div>
+                    <div><input type="radio" name="question1"><label>2</label></div>
+                    <div><input type="radio" name="question1" checked><label>3</label></div>
+                    <div><input type="radio" name="question1"><label>4</label></div>
+                    <div><input type="radio" name="question1"><label>5</label></div>
                 </group>
             </div>
         </div>
 
         <div class="divTableRow">
             <div class="divTableCellText">
-                <b>Do you experience communication difficulties in sitations when speaking
-                with one other person?</b>&nbsp;(at home, in a checkout line)
+                <b>Do you experience communication difficulties while watching
+                TV and in various types of entertainment?</b>
+                &nbsp;(movies, radio, plays, night clubs, musical entertainment, etc.)
             </div>
             <div class="divTableCellRating inline-radio-container">
                 <group class="inline-radio">
-                    <div><input type="radio" name="title"><label>1</label></div>
-                    <div><input type="radio" name="title"><label>2</label></div>
-                    <div><input type="radio" name="title" checked><label>3</label></div>
-                    <div><input type="radio" name="title"><label>4</label></div>
-                    <div><input type="radio" name="title"><label>5</label></div>
+                    <div><input type="radio" name="question2"><label>1</label></div>
+                    <div><input type="radio" name="question2"><label>2</label></div>
+                    <div><input type="radio" name="question2" checked><label>3</label></div>
+                    <div><input type="radio" name="question2"><label>4</label></div>
+                    <div><input type="radio" name="question2"><label>5</label></div>
                 </group>
             </div>
         </div>
 
         <div class="divTableRow">
             <div class="divTableCellText">
-                <b>Do you experience communication difficulties in sitations when speaking
-                with one other person?</b>&nbsp;(at home, in a checkout line)
+                <b>Do you experience communication difficulties in situations
+                when conversing with a small group of several persons?</b>
+                &nbsp;(with friends or families, co-workers, in meetings
+                or casual conversations, over dinner or while playing cards, etc.)
             </div>
             <div class="divTableCellRating inline-radio-container">
                 <group class="inline-radio">
-                    <div><input type="radio" name="title"><label>1</label></div>
-                    <div><input type="radio" name="title"><label>2</label></div>
-                    <div><input type="radio" name="title" checked><label>3</label></div>
-                    <div><input type="radio" name="title"><label>4</label></div>
-                    <div><input type="radio" name="title"><label>5</label></div>
+                    <div><input type="radio" name="question3"><label>1</label></div>
+                    <div><input type="radio" name="question3"><label>2</label></div>
+                    <div><input type="radio" name="question3" checked><label>3</label></div>
+                    <div><input type="radio" name="question3"><label>4</label></div>
+                    <div><input type="radio" name="question3"><label>5</label></div>
                 </group>
             </div>
         </div>
