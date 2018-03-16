@@ -92,15 +92,30 @@
         border-right: 0;
     }
     .inline-radio input:checked + label {
-        background: #d81b60;
+        background: #0000ee;
         font-weight: 500;
         color: #fff;
+    }
+    #calculateButton {
+        background-color: #0000ee;
+        padding: .5em;
+        -moz-border-radius: 5px;
+        -webkit-border-radius: 5px;
+        border-radius: 6px;
+        color: #fff;
+        font-size: 16px;
+        border: none;
+        margin-top: 20px;
+    }
+    #results {
+        font-size: 16px;
+        margin-top: 20px;
     }
   </style>
 </head>
 
 <body>
-    <div class="divTable" style="width: 100%;">
+    <div id="assessment" class="divTable" style="width: 100%;">
         <div class="divTableRow">
             <div class="divTableCellText" style="font-size:24px;line-height:30px;border:none">
                 <b>PATIENT SELF-ASSESSMENT OF COMMUNICATION</b>
@@ -141,11 +156,11 @@
             </div>
             <div class="divTableCellRating inline-radio-container">
                 <group class="inline-radio">
-                    <div><input type="radio" name="question1"><label>1</label></div>
-                    <div><input type="radio" name="question1"><label>2</label></div>
-                    <div><input type="radio" name="question1" checked><label>3</label></div>
-                    <div><input type="radio" name="question1"><label>4</label></div>
-                    <div><input type="radio" name="question1"><label>5</label></div>
+                    <div><input type="radio" name="question1" value="1"><label>1</label></div>
+                    <div><input type="radio" name="question1" value="2"><label>2</label></div>
+                    <div><input type="radio" name="question1" value="3" checked><label>3</label></div>
+                    <div><input type="radio" name="question1" value="4" ><label>4</label></div>
+                    <div><input type="radio" name="question1" value="5"><label>5</label></div>
                 </group>
             </div>
         </div>
@@ -184,6 +199,25 @@
                 </group>
             </div>
         </div>
+        <div class="divTableRow">
+            <button id="calculateButton">Calculate Score</button>
+        </div>
+        <div id="results">
+        </div>
     </div>
+    <script>
+        const calculateButton = document.getElementById("calculateButton");
+        calculateButton.addEventListener("click", showResults);
+
+        const resultsContainer = document.getElementById("results");
+
+        function showResults() {
+            const answerContainers = assessment.querySelectorAll('.inline-radio-container');
+            const answerContainer = answerContainers[0];
+            const selector = 'input[name=question'+1+']:checked';
+            const userAnswer = (answerContainer.querySelector(selector)).value;
+            resultsContainer.innerHTML = userAnswer;
+        }
+    </script>
 </body>
 </html>
