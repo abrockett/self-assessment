@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Patient Self-Assessment of Communication</title>
+  <style>
+    .divTable{
+        display: table;
+        width: 100%;
+    }
+    .divTableRow {
+        display: table-row;
+    }
+    .divTableCellText {
+        /* border: 1px solid #999999; */
+        display: table-cell;
+        padding: 3px 10px;
+        width: 70%;
+        background: #fff;
+        text-align: left;
+        vertical-align: middle;
+        /* line-height: 90px; */
+    }
+    .divTableCellRating {
+        /* border: 1px solid #999999; */
+        display: table-cell;
+        padding: 3px 10px;
+        width: 30%;
+    }
+
+    *, *::before, *::after {
+        box-sizing: border-box;
+    }
+    html, body {
+        width: 100%;
+        height: 100%;
+    }
+    body {
+        background: #ffffff;
+        font-family: 'Roboto', sans-serif;
+        display: flex;
+        padding: 30px;
+    }
+    .inline-radio-container {
+        background: #fff;
+        width: 100%;
+        margin: auto;
+        padding: 10px;
+        min-width: 320px;
+        max-width: 540px;
+        /* box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.16), 0 2px 5px 0 rgba(0, 0, 0, 0.26); */
+        /* border-radius: 3px; */
+    }
+    h1 {
+        color: #fff;
+    }
+    group + group {
+        margin-top: 20px;
+    }
+    .inline-radio {
+        display: flex;
+        border-radius: 3px;
+        overflow: hidden;
+        border: 1px solid #b6b6b6;
+    }
+    .inline-radio div {
+        position: relative;
+        flex: 1;
+    }
+    .inline-radio input {
+        width: 100%;
+        height: 40px;
+        opacity: 0;
+    }
+    .inline-radio label {
+        position: absolute;
+        top: 0;
+        left: 0;
+        color: #b6b6b6;
+        width: 100%;
+        height: 100%;
+        background: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        pointer-events: none;
+        border-right: 1px solid #b6b6b6;
+    }
+    .inline-radio div:last-child label {
+        border-right: 0;
+    }
+    .inline-radio input:checked + label {
+        background: #d81b60;
+        font-weight: 500;
+        color: #fff;
+    }
+  </style>
+</head>
+
+<body>
+    <div class="divTable" style="width: 100%;">
+        <div class="divTableRow">
+            <div class="divTableCellText">
+                <b>PATIENT SELF-ASSESSMENT OF COMMUNICATION</b>
+            </div>
+        </div>
+
+        <div class="divTableRow">
+            <div class="divTableCellText">
+                The purpose of this form is to identify problems your hearing loss
+                may be causing you.
+            </div>
+        </div>
+
+        <div class="divTableRow">
+            <div class="divTableCellText">
+                <b>Do you experience communication difficulties in sitations when speaking
+                with one other person?</b>&nbsp;(at home, in a checkout line)
+            </div>
+            <div class="divTableCellRating inline-radio-container">
+                <group class="inline-radio">
+                    <div><input type="radio" name="title"><label>1</label></div>
+                    <div><input type="radio" name="title"><label>2</label></div>
+                    <div><input type="radio" name="title" checked><label>3</label></div>
+                    <div><input type="radio" name="title"><label>4</label></div>
+                    <div><input type="radio" name="title"><label>5</label></div>
+                </group>
+            </div>
+        </div>
+
+        <div class="divTableRow">
+            <div class="divTableCellText">
+                <b>Do you experience communication difficulties in sitations when speaking
+                with one other person?</b>&nbsp;(at home, in a checkout line)
+            </div>
+            <div class="divTableCellRating inline-radio-container">
+                <group class="inline-radio">
+                    <div><input type="radio" name="title"><label>1</label></div>
+                    <div><input type="radio" name="title"><label>2</label></div>
+                    <div><input type="radio" name="title" checked><label>3</label></div>
+                    <div><input type="radio" name="title"><label>4</label></div>
+                    <div><input type="radio" name="title"><label>5</label></div>
+                </group>
+            </div>
+        </div>
+
+        <div class="divTableRow">
+            <div class="divTableCellText">
+                <b>Do you experience communication difficulties in sitations when speaking
+                with one other person?</b>&nbsp;(at home, in a checkout line)
+            </div>
+            <div class="divTableCellRating inline-radio-container">
+                <group class="inline-radio">
+                    <div><input type="radio" name="title"><label>1</label></div>
+                    <div><input type="radio" name="title"><label>2</label></div>
+                    <div><input type="radio" name="title" checked><label>3</label></div>
+                    <div><input type="radio" name="title"><label>4</label></div>
+                    <div><input type="radio" name="title"><label>5</label></div>
+                </group>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
