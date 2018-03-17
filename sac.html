@@ -28,7 +28,7 @@
         padding: 3px 10px;
         width: 30%;
     }
-    .nowrap  { 
+    .nowrap  {
         -webkit-flex-wrap: nowrap;
         flex-wrap: nowrap;
     }
@@ -134,7 +134,7 @@
                 The purpose of this form is to identify problems your hearing loss
                 may be causing you. If you wear hearing aids, answer the questions
                 according to how you communicate <i>when the hearing aids are in use.</i></p>
-                <p>One of the five ratings on the right should be assigned to each 
+                <p>One of the five ratings on the right should be assigned to each
                 of the statements below.</p>
                 </p>
             </div>
@@ -156,11 +156,11 @@
             </div>
             <div class="divTableCellRating inline-radio-container">
                 <group class="inline-radio">
-                    <div><input type="radio" name="question1" value="1"><label>1</label></div>
-                    <div><input type="radio" name="question1" value="2"><label>2</label></div>
-                    <div><input type="radio" name="question1" value="3" checked><label>3</label></div>
-                    <div><input type="radio" name="question1" value="4" ><label>4</label></div>
-                    <div><input type="radio" name="question1" value="5"><label>5</label></div>
+                    <div><input type="radio" name="question0" value="1"><label>1</label></div>
+                    <div><input type="radio" name="question0" value="2"><label>2</label></div>
+                    <div><input type="radio" name="question0" value="3" checked><label>3</label></div>
+                    <div><input type="radio" name="question0" value="4" ><label>4</label></div>
+                    <div><input type="radio" name="question0" value="5"><label>5</label></div>
                 </group>
             </div>
         </div>
@@ -173,11 +173,11 @@
             </div>
             <div class="divTableCellRating inline-radio-container">
                 <group class="inline-radio">
-                    <div><input type="radio" name="question2"><label>1</label></div>
-                    <div><input type="radio" name="question2"><label>2</label></div>
-                    <div><input type="radio" name="question2" checked><label>3</label></div>
-                    <div><input type="radio" name="question2"><label>4</label></div>
-                    <div><input type="radio" name="question2"><label>5</label></div>
+                    <div><input type="radio" name="question1" value="1"><label>1</label></div>
+                    <div><input type="radio" name="question1" value="2"><label>2</label></div>
+                    <div><input type="radio" name="question1" value="3" checked><label>3</label></div>
+                    <div><input type="radio" name="question1" value="4"><label>4</label></div>
+                    <div><input type="radio" name="question1" value="5"><label>5</label></div>
                 </group>
             </div>
         </div>
@@ -191,11 +191,11 @@
             </div>
             <div class="divTableCellRating inline-radio-container">
                 <group class="inline-radio">
-                    <div><input type="radio" name="question3"><label>1</label></div>
-                    <div><input type="radio" name="question3"><label>2</label></div>
-                    <div><input type="radio" name="question3" checked><label>3</label></div>
-                    <div><input type="radio" name="question3"><label>4</label></div>
-                    <div><input type="radio" name="question3"><label>5</label></div>
+                    <div><input type="radio" name="question2" value="1"><label>1</label></div>
+                    <div><input type="radio" name="question2" value="2"><label>2</label></div>
+                    <div><input type="radio" name="question2" value="3" checked><label>3</label></div>
+                    <div><input type="radio" name="question2" value="4"><label>4</label></div>
+                    <div><input type="radio" name="question2" value="5"><label>5</label></div>
                 </group>
             </div>
         </div>
@@ -213,10 +213,14 @@
 
         function showResults() {
             const answerContainers = assessment.querySelectorAll('.inline-radio-container');
-            const answerContainer = answerContainers[0];
-            const selector = 'input[name=question'+1+']:checked';
-            const userAnswer = (answerContainer.querySelector(selector)).value;
-            resultsContainer.innerHTML = userAnswer;
+            let total = 0;
+            for (let i = 0; i < answerContainers.length; i++) {
+              let answerContainer = answerContainers[i];
+              let selector = 'input[name=question'+i+']:checked';
+              let valueSelected = answerContainer.querySelector(selector).value;
+              total = total + Number(valueSelected);
+            }
+            resultsContainer.innerHTML = "Total score: " + total;
         }
     </script>
 </body>
