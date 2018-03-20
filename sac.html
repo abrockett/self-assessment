@@ -202,25 +202,44 @@
         <div class="divTableRow">
             <button id="calculateButton">Calculate Score</button>
         </div>
-        <div id="results">
+        <div id="results1">
+        </div>
+        <div id="results2">
         </div>
     </div>
     <script>
         const calculateButton = document.getElementById("calculateButton");
         calculateButton.addEventListener("click", showResults);
+        const resultsContainer1 = document.getElementById("results1");
+        const resultsContainer2 = document.getElementById("results2");
+        const answerContainers = assessment.querySelectorAll('.inline-radio-container');
 
-        const resultsContainer = document.getElementById("results");
 
         function showResults() {
-            const answerContainers = assessment.querySelectorAll('.inline-radio-container');
-            let total = 0;
-            for (let i = 0; i < answerContainers.length; i++) {
-              let answerContainer = answerContainers[i];
-              let selector = 'input[name=question'+i+']:checked';
-              let valueSelected = answerContainer.querySelector(selector).value;
-              total = total + Number(valueSelected);
-            }
-            resultsContainer.innerHTML = "Total score: " + total;
+          showResults1();
+          showResults2();
+        }
+
+        function showResults1() {
+          let total = 0;
+          for (let i = 0; i < answerContainers.length; i++) {
+            let answerContainer = answerContainers[i];
+            let selector = 'input[name=question'+i+']:checked';
+            let valueSelected = answerContainer.querySelector(selector).value;
+            total = total + Number(valueSelected);
+          }
+          resultsContainer1.innerHTML = "Total score (all questions): " + total;
+        }
+
+        function showResults2() {
+          let total = 0;
+          for (let i = 0; i < 3; i++) {
+            let answerContainer = answerContainers[i];
+            let selector = 'input[name=question'+i+']:checked';
+            let valueSelected = answerContainer.querySelector(selector).value;
+            total = total + Number(valueSelected);
+          }
+          resultsContainer2.innerHTML = "Total score (first 5): " + total;
         }
     </script>
 </body>
