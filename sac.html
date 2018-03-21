@@ -312,16 +312,24 @@
 
             <div class="divTableRow">
                 <div class="divTableCellText">
-                    <b>If you are using a hearing aid: On an average day, how many hours did you use your hearing aids?</b>
+                    <b>On average, how much of the time do you wear your hearing aids?</b>
                 </div>
                 <div class="divTableCellRating inline-radio-container">
-                    <div><input type="text" name="question10"></div>
+                    <group class="inline-radio">
+                        <div><input type="radio" name="question10" value="1"><label><h6>None</h6></label></div>
+                        <div><input type="radio" name="question10" value="2"><label><h6>A little</h6></label></div>
+                        <div><input type="radio" name="question10" value="3" checked><label><h6>Some</h6></label></div>
+                        <div><input type="radio" name="question10" value="4"><label><h6>Most</h6></label></div>
+                        <div><input type="radio" name="question10" value="5"><label><h6>All</h6></label></div>
+                    </group>
                 </div>
             </div>
+
 
         <div class="divTableRow">
             <button id="calculateButton">Calculate Score</button>
         </div>
+        </br>
         <div id="results1">
         </div>
         <div id="results2">
@@ -383,15 +391,18 @@
         }
 
         function showResults4() {
+          let satisfactionLabels = ["not", "slightly", "somewhat", "mostly", "very"];
           let satisfactionContainer = answerContainers[9];
           let satisfactionSelector = 'input[name=question9]:checked';
           let satisfactionValue = satisfactionContainer.querySelector(satisfactionSelector).value;
-          let hoursContainer = answerContainers[10];
-          let hoursSelector = 'input[name=question10]';
-          let hoursValue = hoursContainer.querySelector(hoursSelector).value;
+
+          let timeLabels = ["none", "a little", "some", "most", "all"];
+          let timeContainer = answerContainers[10];
+          let timeSelector = 'input[name=question10]';
+          let timeValue = timeContainer.querySelector(timeSelector).value;
           resultsContainer4.innerHTML = "On average, I wear my hearing aids " +
-              hoursValue / 16.0 * 100.0 + "% of a 16 hour day and I am " +
-              satisfactionValue + " satisfied with their performance."
+              timeLabels[timeValue-1] + " of the time, and I am " +
+              satisfactionLabels[satisfactionValue-1] + " satisfied with their performance."
         }
     </script>
 </body>
