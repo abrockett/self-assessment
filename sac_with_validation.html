@@ -363,8 +363,7 @@
             let answerContainer = answerContainers[i];
             let selector = 'input[name=question'+i+']:checked';
             if (!answerContainer.querySelector(selector)) {
-                resultsContainer1.innerHTML = 
-                    '<div style=color:red;font-size=18px">Please answer all the questions</p>'
+                alert("You didn't answer question " + (i+1) + " yet.");
                 return false;
             }
           }
