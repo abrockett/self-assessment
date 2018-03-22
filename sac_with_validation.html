@@ -330,15 +330,29 @@
             <button id="calculateButton">Calculate Score</button>
         </div>
         </br>
-        <div id="results1">
-        </div>
-        <div id="results2">
-        </div>
-        <div id="results3">
-        </div>
-        <div id="results4">
-        </div>
-
+        <table style="width: 33%;" border="2">
+            <tbody>
+            <tr>
+            <td style="width: 67%;">&nbsp;</td>
+            <td style="width: 33%;">SAC Score</td>
+            </tr>
+            <tr>
+            <td style="width: 67%;">Overall</td>
+            <td style="width: 33%;" id="results1">&nbsp;</td>
+            </tr>
+            <tr>
+            <td style="width: 67%;">Activity Limitation (disability)</td>
+            <td style="width: 33%;" id="results2">&nbsp;</td>
+            </tr>
+            <tr>
+            <td style="width: 67%;">Participation Restriction (handicap)</td>
+            <td style="width: 33%;" id="results3">&nbsp;</td>
+            </tr>
+            <tr>
+            <td colspan="2" id="results4">&nbsp;</td>
+            </tr>
+            </tbody>
+            </table>
     </div>
     <script>
         const calculateButton = document.getElementById("calculateButton");
@@ -378,7 +392,7 @@
             let valueSelected = answerContainer.querySelector(selector).value;
             total = total + Number(valueSelected);
           }
-          resultsContainer1.innerHTML = "Total score (all questions): " + total;
+          resultsContainer1.innerHTML = "" + total;
         }
 
         function showResults2() {
@@ -389,7 +403,7 @@
             let valueSelected = answerContainer.querySelector(selector).value;
             total = total + Number(valueSelected);
           }
-          resultsContainer2.innerHTML = "Activity Limitation (Q 1-5): " + total;
+          resultsContainer2.innerHTML = "" + total;
         }
 
         function showResults3() {
@@ -400,7 +414,7 @@
             let valueSelected = answerContainer.querySelector(selector).value;
             total = total + Number(valueSelected);
           }
-          resultsContainer3.innerHTML = "Participation Restriction (Q 6-9): " + total;
+          resultsContainer3.innerHTML = "" + total;
         }
 
         function showResults4() {
